@@ -1,0 +1,167 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-BoldItalic;
+}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red106\green62\blue62;\red0\green0\blue192;
+\red63\green127\blue95;\red42\green0\blue255;}
+{\*\expandedcolortbl;;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c0\c0\c75294;
+\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c16471\c0\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs24 \cf2 package
+\f1\b0 \cf0  Prova;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  java.util.Scanner;\
+\
+
+\f0\b \cf2 public
+\f1\b0 \cf0  
+\f0\b \cf2 class
+\f1\b0 \cf0  Principal \{\
+\
+	
+\f0\b \cf2 public
+\f1\b0 \cf0  
+\f0\b \cf2 static
+\f1\b0 \cf0  
+\f0\b \cf2 void
+\f1\b0 \cf0  main(String[] \cf3 args\cf0 ) \{\
+		\
+		Scanner \cf3 enter\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  Scanner(System.
+\f2\i\b \cf4 in
+\f1\i0\b0 \cf0 );\
+		Funcionario \cf3 funcionario\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  Funcionario();\
+		\
+		String \cf3 nome\cf0 , \cf3 situacao\cf0 ;\
+		
+\f0\b \cf2 int
+\f1\b0 \cf0  \cf3 opcao\cf0 , \cf3 idade\cf0 ;\
+\pard\pardeftab720\partightenfactor0
+\cf5 //-----------------------------------------------------------------------------------------------------------------------------------------------------------\cf0 \
+		System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .println(\cf6 "***Cadastro de Funcionario***"\cf0 );\
+		
+\f0\b \cf2 do
+\f1\b0 \cf0  \{\
+			System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .printf(\cf6 "\\n\\tMenu\\n\\n"\cf0 );\
+			System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .printf(\cf6 "1: Cadastrar Funcionario\\n2: Consultar Funcionario\\n3: Lista Funcionario\\n4: Funcionarios Ativos\\n5: Funcionarios Pela Idade\\n0: Sair\\n"\cf0 );\
+			\cf3 opcao\cf0 =\cf3 enter\cf0 .nextInt();\
+\cf5 //-----------------------------------------------------------------------------------------------------------------------------------------------------------\cf0 \
+			
+\f0\b \cf2 if
+\f1\b0 \cf0 (\cf3 opcao\cf0 ==1) \{\
+				System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .println(\cf6 "\\n\\t##Cadastro de Funcionario##\\n"\cf0 );\
+				System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .print(\cf6 "Nome do Funcionario: "\cf0 );\
+				
+\f0\b \cf2 try
+\f1\b0 \cf0  \{\
+					\cf3 nome\cf0 =\cf3 enter\cf0 .next();\
+					System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .print(\cf6 "Idade: "\cf0 );\
+					\cf3 idade\cf0 =\cf3 enter\cf0 .nextInt();\
+					System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .print(\cf6 "Situacao do Funcionario (Ativo/Inativo): "\cf0 );\
+					\cf3 situacao\cf0 =\cf3 enter\cf0 .next();\
+					\cf3 funcionario\cf0 .addFuncionario(\cf3 nome\cf0 , \cf3 idade\cf0 , \cf3 situacao\cf0 );\
+				\}
+\f0\b \cf2 catch
+\f1\b0 \cf0 (Exception \cf3 e\cf0 ) \{\
+					System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .println(\cf6 "Algo deu errado!"\cf0 );\
+				\}\
+				\
+			\}\
+\cf5 //-----------------------------------------------------------------------------------------------------------------------------------------------------------\cf0 \
+			
+\f0\b \cf2 if
+\f1\b0 \cf0 (\cf3 opcao\cf0 ==2) \{\
+				System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .println(\cf6 "\\n\\t##Consulta Funcionario##\\n"\cf0 );\
+				System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .print(\cf6 "Nome do Funcionario: "\cf0 );\
+				
+\f0\b \cf2 try
+\f1\b0 \cf0  \{\
+					\cf3 nome\cf0 =\cf3 enter\cf0 .next();\
+					\cf3 funcionario\cf0 .consultaFuncio(\cf3 nome\cf0 );\
+				\}
+\f0\b \cf2 catch
+\f1\b0 \cf0 (Exception \cf3 e\cf0 ) \{\
+					System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .println(\cf6 "Algo deu errado!"\cf0 );\
+				\}\
+			\}\
+\cf5 //-----------------------------------------------------------------------------------------------------------------------------------------------------------\cf0 \
+			
+\f0\b \cf2 if
+\f1\b0 \cf0 (\cf3 opcao\cf0 ==3) \{\
+				System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .println(\cf6 "\\n\\t##Lista de Funcionarios##\\n"\cf0 );\
+				\cf3 funcionario\cf0 .listaFuncio();\
+			\}\
+\cf5 //-----------------------------------------------------------------------------------------------------------------------------------------------------------\cf0 \
+			
+\f0\b \cf2 if
+\f1\b0 \cf0 (\cf3 opcao\cf0 ==4) \{\
+				System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .println(\cf6 "\\n\\t##Funcionarios Ativos##\\n"\cf0 );\
+				\cf3 funcionario\cf0 .listaFuncioAtivo();\
+			\}\
+\cf5 //-----------------------------------------------------------------------------------------------------------------------------------------------------------\cf0 \
+			
+\f0\b \cf2 if
+\f1\b0 \cf0 (\cf3 opcao\cf0 ==5) \{\
+				System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .println(\cf6 "\\n\\t##Lista de Funcionarios Pela Idade##\\n"\cf0 );\
+				\cf3 funcionario\cf0 .listaFuncioIdade();\
+			\}\
+\cf5 //-----------------------------------------------------------------------------------------------------------------------------------------------------------\cf0 \
+			
+\f0\b \cf2 if
+\f1\b0 \cf0 (\cf3 opcao\cf0 ==0) \{\
+				System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .println(\cf6 "\\nBy!"\cf0 );\
+			\}\
+\cf5 //-----------------------------------------------------------------------------------------------------------------------------------------------------------\cf0 \
+			
+\f0\b \cf2 if
+\f1\b0 \cf0 (\cf3 opcao\cf0 <0 || \cf3 opcao\cf0 >=6) \{\
+				System.
+\f2\i\b \cf4 out
+\f1\i0\b0 \cf0 .println(\cf6 "\\nOpcao Invalida!"\cf0 );\
+			\}\
+\cf5 //-----------------------------------------------------------------------------------------------------------------------------------------------------------\cf0 \
+		\}
+\f0\b \cf2 while
+\f1\b0 \cf0  (\cf3 opcao\cf0 !=0);\
+\cf5 //-----------------------------------------------------------------------------------------------------------------------------------------------------------		\cf0 \
+		\cf3 enter\cf0 .close();\
+	\}\
+\
+\}\
+}
